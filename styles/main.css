@@ -1,0 +1,89 @@
+
+.chart-block{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 2fr; 
+    grid-template-rows: .1fr .25fr 1fr 1fr 1fr 1fr 1.1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    grid-template-areas: 
+    "nav nav nav nav nav nav nav"
+    " . header header header header header header "
+    ". standard standard standard standard standard ."
+    ". standard standard standard standard standard ."
+    ". voiced voiced voiced voiced voiced ."
+    ". slides slides slides slides slides ."
+    ". slides slides slides slides slides ."; 
+}
+
+nav{
+    grid-area: nav;
+}
+
+.page-header{
+    grid-area: header;
+}
+
+td img {
+    height: 4em;
+    margin: auto;
+    cursor: pointer;
+}
+
+
+.chart{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 3%;
+    grid-area: table;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tbody{
+    width: 100%;
+}
+
+td {
+    border: 2px solid black;
+    text-align: center;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+.play {
+    color: green;
+}
+
+.ico-audio {
+    color: black;
+    cursor: pointer;
+}
+
+#standard{
+    grid-area: standard;
+}
+
+#standard td {
+    border: 4px solid darkorange;
+}
+
+#voiced{
+    grid-area: voiced;
+}
+
+#slides{
+    grid-area: slides;
+}
+
+#slides tbody{
+    width: 60%;
+    display: table;
+}

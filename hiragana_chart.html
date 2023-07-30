@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Japanese Study Tool</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link href="styles/main.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>
+</head>
+
+<header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Japanese Study Tool</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Hiragana
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="hirchart.html">Chart</a></li>
+              <li><a class="dropdown-item" href="#">Flashcards</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Katakana
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Chart</a></li>
+              <li><a class="dropdown-item" href="#">Flashcards</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Study Sets</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <div class="contents-block mx-auto page-wrapper chart-block">
+    <section class="page-header">
+      <h1>Hiragana Chart</h1>
+    </section>
+    <section id="standard" class="chart">
+      <table class="kana-chart">
+        <tbody>
+          <tr>
+            <td><img src="images/hiragana/Still/hi01s.gif" data-bs-toggle="modal" data-bs-target="#hi01Modal"><a
+                class="ico-audio" id="hi01"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi02s.gif" data-bs-toggle="modal" data-bs-target="#hi02Modal"><a
+                class="ico-audio" id="hi02"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi03s.gif" data-bs-toggle="modal" data-bs-target="#hi03Modal"><a
+                class="ico-audio" id="hi03"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi04s.gif" data-bs-toggle="modal" data-bs-target="#hi04Modal"><a
+                class="ico-audio" id="hi04"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi05s.gif" data-bs-toggle="modal" data-bs-target="#hi05Modal"><a
+                class="ico-audio" id="hi05"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi06s.gif" data-bs-toggle="modal" data-bs-target="#hi06Modal"><a
+                class="ico-audio" id="hi06"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi07s.gif" data-bs-toggle="modal" data-bs-target="#hi07Modal"><a
+                class="ico-audio" id="hi07"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi08s.gif" data-bs-toggle="modal" data-bs-target="#hi08Modal"><a
+                class="ico-audio" id="hi08"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi09s.gif" data-bs-toggle="modal" data-bs-target="#hi09Modal"><a
+                class="ico-audio" id="hi09"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi10s.gif" data-bs-toggle="modal" data-bs-target="#hi10Modal"><a
+                class="ico-audio" id="hi10"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi11s.gif" data-bs-toggle="modal" data-bs-target="#hi11Modal"><a
+                class="ico-audio" id="hi11"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi12s.gif" data-bs-toggle="modal" data-bs-target="#hi12Modal"><a
+                class="ico-audio" id="hi12"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi13s.gif" data-bs-toggle="modal" data-bs-target="#hi13Modal"><a
+                class="ico-audio" id="hi13"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi14s.gif" data-bs-toggle="modal" data-bs-target="#hi14Modal"><a
+                class="ico-audio" id="hi14"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi15s.gif" data-bs-toggle="modal" data-bs-target="#hi15Modal"><a
+                class="ico-audio" id="hi15"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi16s.gif" data-bs-toggle="modal" data-bs-target="#hi16Modal"><a
+                class="ico-audio" id="hi16"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi17s.gif" data-bs-toggle="modal" data-bs-target="#hi17Modal"><a
+                class="ico-audio" id="hi17"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi18s.gif" data-bs-toggle="modal" data-bs-target="#hi18Modal"><a
+                class="ico-audio" id="hi18"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi19s.gif" data-bs-toggle="modal" data-bs-target="#hi19Modal"><a
+                class="ico-audio" id="hi19"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi20s.gif" data-bs-toggle="modal" data-bs-target="#hi20Modal"><a
+                class="ico-audio" id="hi20"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi21s.gif" data-bs-toggle="modal" data-bs-target="#hi21Modal"><a
+                class="ico-audio" id="hi21"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi22s.gif" data-bs-toggle="modal" data-bs-target="#hi22Modal"><a
+                class="ico-audio" id="hi22"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi23s.gif" data-bs-toggle="modal" data-bs-target="#hi23Modal"><a
+                class="ico-audio" id="hi23"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi24s.gif" data-bs-toggle="modal" data-bs-target="#hi24Modal"><a
+                class="ico-audio" id="hi24"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi25s.gif" data-bs-toggle="modal" data-bs-target="#hi25Modal"><a
+                class="ico-audio" id="hi25"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi26s.gif" data-bs-toggle="modal" data-bs-target="#hi26Modal"><a
+                class="ico-audio" id="hi26"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi27s.gif" data-bs-toggle="modal" data-bs-target="#hi27Modal"><a
+                class="ico-audio" id="hi27"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi28s.gif" data-bs-toggle="modal" data-bs-target="#hi28Modal"><a
+                class="ico-audio" id="hi28"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi29s.gif" data-bs-toggle="modal" data-bs-target="#hi29Modal"><a
+                class="ico-audio" id="hi29"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi30s.gif" data-bs-toggle="modal" data-bs-target="#hi30Modal"><a
+                class="ico-audio" id="hi30"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi31s.gif" data-bs-toggle="modal" data-bs-target="#hi31Modal"><a
+                class="ico-audio" id="hi31"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi32s.gif" data-bs-toggle="modal" data-bs-target="#hi32Modal"><a
+                class="ico-audio" id="hi32"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi33s.gif" data-bs-toggle="modal" data-bs-target="#hi33Modal"><a
+                class="ico-audio" id="hi33"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi34s.gif" data-bs-toggle="modal" data-bs-target="#hi34Modal"><a
+                class="ico-audio" id="hi34"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi35s.gif" data-bs-toggle="modal" data-bs-target="#hi35Modal"><a
+                class="ico-audio" id="hi35"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi36s.gif" data-bs-toggle="modal" data-bs-target="#hi36Modal"><a
+                class="ico-audio" id="hi36"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td></td>
+            <td><img src="images/hiragana/Still/hi37s.gif" data-bs-toggle="modal" data-bs-target="#hi37Modal"><a
+                class="ico-audio" id="hi37"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td></td>
+            <td><img src="images/hiragana/Still/hi38s.gif" data-bs-toggle="modal" data-bs-target="#hi38Modal"><a
+                class="ico-audio" id="hi38"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi39s.gif" data-bs-toggle="modal" data-bs-target="#hi39Modal"><a
+                class="ico-audio" id="hi39"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi40s.gif" data-bs-toggle="modal" data-bs-target="#hi40Modal"><a
+                class="ico-audio" id="hi40"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi41s.gif" data-bs-toggle="modal" data-bs-target="#hi41Modal"><a
+                class="ico-audio" id="hi41"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi42s.gif" data-bs-toggle="modal" data-bs-target="#hi42Modal"><a
+                class="ico-audio" id="hi42"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi43s.gif" data-bs-toggle="modal" data-bs-target="#hi43Modal"><a
+                class="ico-audio" id="hi43"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi44s.gif" data-bs-toggle="modal" data-bs-target="#hi44Modal"><a
+                class="ico-audio" id="hi44"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td></td>
+            <td><img src="images/hiragana/Still/hi45s.gif" data-bs-toggle="modal" data-bs-target="#hi45Modal"><a
+                class="ico-audio" id="hi45"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td></td>
+            <td><img src="images/hiragana/Still/hi46s.gif" data-bs-toggle="modal" data-bs-target="#hi46Modal"><a
+                class="ico-audio" id="hi46"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="voiced" class="chart">
+      <table class="kana-chart">
+        <tbody>
+          <tr>
+            <td><img src="images/hiragana/Still/hi47s.gif" data-bs-toggle="modal" data-bs-target="#hi47Modal"><a
+                class="ico-audio" id="hi47"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi48s.gif" data-bs-toggle="modal" data-bs-target="#hi48Modal"><a
+                class="ico-audio" id="hi48"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi49s.gif" data-bs-toggle="modal" data-bs-target="#hi49Modal"><a
+                class="ico-audio" id="hi49"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi50s.gif" data-bs-toggle="modal" data-bs-target="#hi50Modal"><a
+                class="ico-audio" id="hi50"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi51s.gif" data-bs-toggle="modal" data-bs-target="#hi51Modal"><a
+                class="ico-audio" id="hi51"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi52s.gif" data-bs-toggle="modal" data-bs-target="#hi52Modal"><a
+                class="ico-audio" id="hi52"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi53s.gif" data-bs-toggle="modal" data-bs-target="#hi53Modal"><a
+                class="ico-audio" id="hi53"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi54s.gif" data-bs-toggle="modal" data-bs-target="#hi54Modal"><a
+                class="ico-audio" id="hi54"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi55s.gif" data-bs-toggle="modal" data-bs-target="#hi55Modal"><a
+                class="ico-audio" id="hi55"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi56s.gif" data-bs-toggle="modal" data-bs-target="#hi56Modal"><a
+                class="ico-audio" id="hi56"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi57s.gif" data-bs-toggle="modal" data-bs-target="#hi57Modal"><a
+                class="ico-audio" id="hi57"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi58s.gif" data-bs-toggle="modal" data-bs-target="#hi58Modal"><a
+                class="ico-audio" id="hi58"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi59s.gif" data-bs-toggle="modal" data-bs-target="#hi59Modal"><a
+                class="ico-audio" id="hi59"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi60s.gif" data-bs-toggle="modal" data-bs-target="#hi60Modal"><a
+                class="ico-audio" id="hi60"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi61s.gif" data-bs-toggle="modal" data-bs-target="#hi61Modal"><a
+                class="ico-audio" id="hi61"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi62s.gif" data-bs-toggle="modal" data-bs-target="#hi62Modal"><a
+                class="ico-audio" id="hi62"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi63s.gif" data-bs-toggle="modal" data-bs-target="#hi63Modal"><a
+                class="ico-audio" id="hi63"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi64s.gif" data-bs-toggle="modal" data-bs-target="#hi64Modal"><a
+                class="ico-audio" id="hi64"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi65s.gif" data-bs-toggle="modal" data-bs-target="#hi65Modal"><a
+                class="ico-audio" id="hi65"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi66s.gif" data-bs-toggle="modal" data-bs-target="#hi66Modal"><a
+                class="ico-audio" id="hi66"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi67s.gif" data-bs-toggle="modal" data-bs-target="#hi67Modal"><a
+                class="ico-audio" id="hi67"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi68s.gif" data-bs-toggle="modal" data-bs-target="#hi68Modal"><a
+                class="ico-audio" id="hi68"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi69s.gif" data-bs-toggle="modal" data-bs-target="#hi69Modal"><a
+                class="ico-audio" id="hi69"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi70s.gif" data-bs-toggle="modal" data-bs-target="#hi70Modal"><a
+                class="ico-audio" id="hi70"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi71s.gif" data-bs-toggle="modal" data-bs-target="#hi71Modal"><a
+                class="ico-audio" id="hi71"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="slides" class="chart">
+      <table class="kana-chart">
+        <tbody>
+          <tr>
+            <td><img src="images/hiragana/Still/hi72s.gif" data-bs-toggle="modal" data-bs-target="#hi72Modal"><a
+                class="ico-audio" id="hi72"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi73s.gif" data-bs-toggle="modal" data-bs-target="#hi73Modal"><a
+                class="ico-audio" id="hi73"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi74s.gif" data-bs-toggle="modal" data-bs-target="#hi74Modal"><a
+                class="ico-audio" id="hi74"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi75s.gif" data-bs-toggle="modal" data-bs-target="#hi75Modal"><a
+                class="ico-audio" id="hi75"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi76s.gif" data-bs-toggle="modal" data-bs-target="#hi76Modal"><a
+                class="ico-audio" id="hi76"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi77s.gif" data-bs-toggle="modal" data-bs-target="#hi77Modal"><a
+                class="ico-audio" id="hi77"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi78s.gif" data-bs-toggle="modal" data-bs-target="#hi78Modal"><a
+                class="ico-audio" id="hi78"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi79s.gif" data-bs-toggle="modal" data-bs-target="#hi79Modal"><a
+                class="ico-audio" id="hi79"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi80s.gif" data-bs-toggle="modal" data-bs-target="#hi80Modal"><a
+                class="ico-audio" id="hi80"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi81s.gif" data-bs-toggle="modal" data-bs-target="#hi81Modal"><a
+                class="ico-audio" id="hi81"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi82s.gif" data-bs-toggle="modal" data-bs-target="#hi82Modal"><a
+                class="ico-audio" id="hi82"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi83s.gif" data-bs-toggle="modal" data-bs-target="#hi83Modal"><a
+                class="ico-audio" id="hi83"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi84s.gif" data-bs-toggle="modal" data-bs-target="#hi84Modal"><a
+                class="ico-audio" id="hi84"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi85s.gif" data-bs-toggle="modal" data-bs-target="#hi85Modal"><a
+                class="ico-audio" id="hi85"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi86s.gif" data-bs-toggle="modal" data-bs-target="#hi86Modal"><a
+                class="ico-audio" id="hi86"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi87s.gif" data-bs-toggle="modal" data-bs-target="#hi87Modal"><a
+                class="ico-audio" id="hi87"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi88s.gif" data-bs-toggle="modal" data-bs-target="#hi88Modal"><a
+                class="ico-audio" id="hi88"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi89s.gif" data-bs-toggle="modal" data-bs-target="#hi89Modal"><a
+                class="ico-audio" id="hi89"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi90s.gif" data-bs-toggle="modal" data-bs-target="#hi90Modal"><a
+                class="ico-audio" id="hi90"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi91s.gif" data-bs-toggle="modal" data-bs-target="#hi91Modal"><a
+                class="ico-audio" id="hi91"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi92s.gif" data-bs-toggle="modal" data-bs-target="#hi92Modal"><a
+                class="ico-audio" id="hi92"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi93s.gif" data-bs-toggle="modal" data-bs-target="#hi93Modal"><a
+                class="ico-audio" id="hi93"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi94s.gif" data-bs-toggle="modal" data-bs-target="#hi94Modal"><a
+                class="ico-audio" id="hi94"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi95s.gif" data-bs-toggle="modal" data-bs-target="#hi95Modal"><a
+                class="ico-audio" id="hi95"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi96s.gif" data-bs-toggle="modal" data-bs-target="#hi96Modal"><a
+                class="ico-audio" id="hi96"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi97s.gif" data-bs-toggle="modal" data-bs-target="#hi97Modal"><a
+                class="ico-audio" id="hi97"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi98s.gif" data-bs-toggle="modal" data-bs-target="#hi98Modal"><a
+                class="ico-audio" id="hi98"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi99s.gif" data-bs-toggle="modal" data-bs-target="#hi99Modal"><a
+                class="ico-audio" id="hi99"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi100s.gif" data-bs-toggle="modal" data-bs-target="#hi100Modal"><a
+                class="ico-audio" id="hi100"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi101s.gif" data-bs-toggle="modal" data-bs-target="#hi101Modal"><a
+                class="ico-audio" id="hi101"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/hiragana/Still/hi102s.gif" data-bs-toggle="modal" data-bs-target="#hi102Modal"><a
+                class="ico-audio" id="hi102"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi103s.gif" data-bs-toggle="modal" data-bs-target="#hi103Modal"><a
+                class="ico-audio" id="hi103"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/hiragana/Still/hi104s.gif" data-bs-toggle="modal" data-bs-target="#hi104Modal"><a
+                class="ico-audio" id="hi104"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+
+  <section>
+    <div class="modal fade" id="hi01Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi01.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi02Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi02.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi03Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi03.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi04Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi04.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi05Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi05.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi06Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi06.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi07Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi07.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi08Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi08.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi09Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi09.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi10Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi10.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi11Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi11.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi12Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi12.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi13Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi13.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi14Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi14.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi15Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi15.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi16Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi16.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi17Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi17.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi18Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi18.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi19Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi19.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi20Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi20.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi21Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi21.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi22Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi22.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi23Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi23.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi24Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi24.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi25Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi25.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi26Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi26.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi27Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi27.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi28Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi28.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi29Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi29.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi30Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi30.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi31Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi31.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi32Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi32.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi33Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi33.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi34Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi34.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi35Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi35.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi36Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi36.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi37Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi37.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi38Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi38.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi39Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi39.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi40Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi40.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi41Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi41.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi42Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi42.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi43Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi43.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi44Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi44.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi45Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi45.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="hi46Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/hiragana/stroke/hi46.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <script src="js/chart.js"></script>
+  <script>
+    $(function () {
+      playHiragana();
+    })
+  </script>
+</body>
+
+</html>
