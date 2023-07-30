@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Japanese Study Tool</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link href="styles/main.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>
+</head>
+
+<header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Japanese Study Tool</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Hiragana
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="hiragana_chart.html">Chart</a></li>
+              <li><a class="dropdown-item" href="#">Flashcards</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Katakana
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Chart</a></li>
+              <li><a class="dropdown-item" href="#">Flashcards</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Study Sets</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <div class="contents-block mx-auto page-wrapper chart-block">
+    <section class="page-header">
+      <h1>Katakana Chart</h1>
+      <p>Click a character marked with <span class="ico-kana-box">&nbsp;</span> to view its stroke order. Click <i
+          class="fa-solid fa-volume-high"></i> to hear each character's pronunciation.</p>
+    </section>
+    <section id="standard" class="chart">
+      <table class="kana-chart">
+        <tbody>
+          <tr>
+            <td><img src="images/katakana/Still/ka01s.gif" data-bs-toggle="modal" data-bs-target="#ka01Modal"><a
+                class="ico-audio" id="ka01"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka02s.gif" data-bs-toggle="modal" data-bs-target="#ka02Modal"><a
+                class="ico-audio" id="ka02"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka03s.gif" data-bs-toggle="modal" data-bs-target="#ka03Modal"><a
+                class="ico-audio" id="ka03"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka04s.gif" data-bs-toggle="modal" data-bs-target="#ka04Modal"><a
+                class="ico-audio" id="ka04"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka05s.gif" data-bs-toggle="modal" data-bs-target="#ka05Modal"><a
+                class="ico-audio" id="ka05"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka06s.gif" data-bs-toggle="modal" data-bs-target="#ka06Modal"><a
+                class="ico-audio" id="ka06"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka07s.gif" data-bs-toggle="modal" data-bs-target="#ka07Modal"><a
+                class="ico-audio" id="ka07"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka08s.gif" data-bs-toggle="modal" data-bs-target="#ka08Modal"><a
+                class="ico-audio" id="ka08"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka09s.gif" data-bs-toggle="modal" data-bs-target="#ka09Modal"><a
+                class="ico-audio" id="ka09"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka10s.gif" data-bs-toggle="modal" data-bs-target="#ka10Modal"><a
+                class="ico-audio" id="ka10"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka11s.gif" data-bs-toggle="modal" data-bs-target="#ka11Modal"><a
+                class="ico-audio" id="ka11"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka12s.gif" data-bs-toggle="modal" data-bs-target="#ka12Modal"><a
+                class="ico-audio" id="ka12"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka13s.gif" data-bs-toggle="modal" data-bs-target="#ka13Modal"><a
+                class="ico-audio" id="ka13"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka14s.gif" data-bs-toggle="modal" data-bs-target="#ka14Modal"><a
+                class="ico-audio" id="ka14"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka15s.gif" data-bs-toggle="modal" data-bs-target="#ka15Modal"><a
+                class="ico-audio" id="ka15"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka16s.gif" data-bs-toggle="modal" data-bs-target="#ka16Modal"><a
+                class="ico-audio" id="ka16"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka17s.gif" data-bs-toggle="modal" data-bs-target="#ka17Modal"><a
+                class="ico-audio" id="ka17"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka18s.gif" data-bs-toggle="modal" data-bs-target="#ka18Modal"><a
+                class="ico-audio" id="ka18"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka19s.gif" data-bs-toggle="modal" data-bs-target="#ka19Modal"><a
+                class="ico-audio" id="ka19"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka20s.gif" data-bs-toggle="modal" data-bs-target="#ka20Modal"><a
+                class="ico-audio" id="ka20"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka21s.gif" data-bs-toggle="modal" data-bs-target="#ka21Modal"><a
+                class="ico-audio" id="ka21"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka22s.gif" data-bs-toggle="modal" data-bs-target="#ka22Modal"><a
+                class="ico-audio" id="ka22"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka23s.gif" data-bs-toggle="modal" data-bs-target="#ka23Modal"><a
+                class="ico-audio" id="ka23"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka24s.gif" data-bs-toggle="modal" data-bs-target="#ka24Modal"><a
+                class="ico-audio" id="ka24"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka25s.gif" data-bs-toggle="modal" data-bs-target="#ka25Modal"><a
+                class="ico-audio" id="ka25"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka26s.gif" data-bs-toggle="modal" data-bs-target="#ka26Modal"><a
+                class="ico-audio" id="ka26"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka27s.gif" data-bs-toggle="modal" data-bs-target="#ka27Modal"><a
+                class="ico-audio" id="ka27"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka28s.gif" data-bs-toggle="modal" data-bs-target="#ka28Modal"><a
+                class="ico-audio" id="ka28"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka29s.gif" data-bs-toggle="modal" data-bs-target="#ka29Modal"><a
+                class="ico-audio" id="ka29"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka30s.gif" data-bs-toggle="modal" data-bs-target="#ka30Modal"><a
+                class="ico-audio" id="ka30"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka31s.gif" data-bs-toggle="modal" data-bs-target="#ka31Modal"><a
+                class="ico-audio" id="ka31"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka32s.gif" data-bs-toggle="modal" data-bs-target="#ka32Modal"><a
+                class="ico-audio" id="ka32"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka33s.gif" data-bs-toggle="modal" data-bs-target="#ka33Modal"><a
+                class="ico-audio" id="ka33"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka34s.gif" data-bs-toggle="modal" data-bs-target="#ka34Modal"><a
+                class="ico-audio" id="ka34"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka35s.gif" data-bs-toggle="modal" data-bs-target="#ka35Modal"><a
+                class="ico-audio" id="ka35"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka36s.gif" data-bs-toggle="modal" data-bs-target="#ka36Modal"><a
+                class="ico-audio" id="ka36"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td></td>
+            <td><img src="images/katakana/Still/ka37s.gif" data-bs-toggle="modal" data-bs-target="#ka37Modal"><a
+                class="ico-audio" id="ka37"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td></td>
+            <td><img src="images/katakana/Still/ka38s.gif" data-bs-toggle="modal" data-bs-target="#ka38Modal"><a
+                class="ico-audio" id="ka38"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka39s.gif" data-bs-toggle="modal" data-bs-target="#ka39Modal"><a
+                class="ico-audio" id="ka39"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka40s.gif" data-bs-toggle="modal" data-bs-target="#ka40Modal"><a
+                class="ico-audio" id="ka40"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka41s.gif" data-bs-toggle="modal" data-bs-target="#ka41Modal"><a
+                class="ico-audio" id="ka41"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka42s.gif" data-bs-toggle="modal" data-bs-target="#ka42Modal"><a
+                class="ico-audio" id="ka42"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka43s.gif" data-bs-toggle="modal" data-bs-target="#ka43Modal"><a
+                class="ico-audio" id="ka43"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka44s.gif" data-bs-toggle="modal" data-bs-target="#ka44Modal"><a
+                class="ico-audio" id="ka44"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td></td>
+            <td><img src="images/katakana/Still/ka45s.gif" data-bs-toggle="modal" data-bs-target="#ka45Modal"><a
+                class="ico-audio" id="ka45"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td></td>
+            <td><img src="images/katakana/Still/ka46s.gif" data-bs-toggle="modal" data-bs-target="#ka46Modal"><a
+                class="ico-audio" id="ka46"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="voiced" class="chart">
+      <table class="kana-chart">
+        <tbody>
+          <tr>
+            <td><img src="images/katakana/Still/ka47s.gif" data-bs-toggle="modal" data-bs-target="#ka47Modal"><a
+                class="ico-audio" id="ka47"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka48s.gif" data-bs-toggle="modal" data-bs-target="#ka48Modal"><a
+                class="ico-audio" id="ka48"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka49s.gif" data-bs-toggle="modal" data-bs-target="#ka49Modal"><a
+                class="ico-audio" id="ka49"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka50s.gif" data-bs-toggle="modal" data-bs-target="#ka50Modal"><a
+                class="ico-audio" id="ka50"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka51s.gif" data-bs-toggle="modal" data-bs-target="#ka51Modal"><a
+                class="ico-audio" id="ka51"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka52s.gif" data-bs-toggle="modal" data-bs-target="#ka52Modal"><a
+                class="ico-audio" id="ka52"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka53s.gif" data-bs-toggle="modal" data-bs-target="#ka53Modal"><a
+                class="ico-audio" id="ka53"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka54s.gif" data-bs-toggle="modal" data-bs-target="#ka54Modal"><a
+                class="ico-audio" id="ka54"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka55s.gif" data-bs-toggle="modal" data-bs-target="#ka55Modal"><a
+                class="ico-audio" id="ka55"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka56s.gif" data-bs-toggle="modal" data-bs-target="#ka56Modal"><a
+                class="ico-audio" id="ka56"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka57s.gif" data-bs-toggle="modal" data-bs-target="#ka57Modal"><a
+                class="ico-audio" id="ka57"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka58s.gif" data-bs-toggle="modal" data-bs-target="#ka58Modal"><a
+                class="ico-audio" id="ka58"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka59s.gif" data-bs-toggle="modal" data-bs-target="#ka59Modal"><a
+                class="ico-audio" id="ka59"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka60s.gif" data-bs-toggle="modal" data-bs-target="#ka60Modal"><a
+                class="ico-audio" id="ka60"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka61s.gif" data-bs-toggle="modal" data-bs-target="#ka61Modal"><a
+                class="ico-audio" id="ka61"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka62s.gif" data-bs-toggle="modal" data-bs-target="#ka62Modal"><a
+                class="ico-audio" id="ka62"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka63s.gif" data-bs-toggle="modal" data-bs-target="#ka63Modal"><a
+                class="ico-audio" id="ka63"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka64s.gif" data-bs-toggle="modal" data-bs-target="#ka64Modal"><a
+                class="ico-audio" id="ka64"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka65s.gif" data-bs-toggle="modal" data-bs-target="#ka65Modal"><a
+                class="ico-audio" id="ka65"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka66s.gif" data-bs-toggle="modal" data-bs-target="#ka66Modal"><a
+                class="ico-audio" id="ka66"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka67s.gif" data-bs-toggle="modal" data-bs-target="#ka67Modal"><a
+                class="ico-audio" id="ka67"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka68s.gif" data-bs-toggle="modal" data-bs-target="#ka68Modal"><a
+                class="ico-audio" id="ka68"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka69s.gif" data-bs-toggle="modal" data-bs-target="#ka69Modal"><a
+                class="ico-audio" id="ka69"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka70s.gif" data-bs-toggle="modal" data-bs-target="#ka70Modal"><a
+                class="ico-audio" id="ka70"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka71s.gif" data-bs-toggle="modal" data-bs-target="#ka71Modal"><a
+                class="ico-audio" id="ka71"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="slides" class="chart">
+      <table class="kana-chart">
+        <tbody>
+          <tr>
+            <td><img src="images/katakana/Still/ka72s.gif" data-bs-toggle="modal" data-bs-target="#ka72Modal"><a
+                class="ico-audio" id="ka72"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka73s.gif" data-bs-toggle="modal" data-bs-target="#ka73Modal"><a
+                class="ico-audio" id="ka73"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka74s.gif" data-bs-toggle="modal" data-bs-target="#ka74Modal"><a
+                class="ico-audio" id="ka74"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka75s.gif" data-bs-toggle="modal" data-bs-target="#ka75Modal"><a
+                class="ico-audio" id="ka75"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka76s.gif" data-bs-toggle="modal" data-bs-target="#ka76Modal"><a
+                class="ico-audio" id="ka76"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka77s.gif" data-bs-toggle="modal" data-bs-target="#ka77Modal"><a
+                class="ico-audio" id="ka77"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka78s.gif" data-bs-toggle="modal" data-bs-target="#ka78Modal"><a
+                class="ico-audio" id="ka78"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka79s.gif" data-bs-toggle="modal" data-bs-target="#ka79Modal"><a
+                class="ico-audio" id="ka79"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka80s.gif" data-bs-toggle="modal" data-bs-target="#ka80Modal"><a
+                class="ico-audio" id="ka80"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka81s.gif" data-bs-toggle="modal" data-bs-target="#ka81Modal"><a
+                class="ico-audio" id="ka81"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka82s.gif" data-bs-toggle="modal" data-bs-target="#ka82Modal"><a
+                class="ico-audio" id="ka82"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka83s.gif" data-bs-toggle="modal" data-bs-target="#ka83Modal"><a
+                class="ico-audio" id="ka83"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka84s.gif" data-bs-toggle="modal" data-bs-target="#ka84Modal"><a
+                class="ico-audio" id="ka84"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka85s.gif" data-bs-toggle="modal" data-bs-target="#ka85Modal"><a
+                class="ico-audio" id="ka85"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka86s.gif" data-bs-toggle="modal" data-bs-target="#ka86Modal"><a
+                class="ico-audio" id="ka86"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka87s.gif" data-bs-toggle="modal" data-bs-target="#ka87Modal"><a
+                class="ico-audio" id="ka87"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka88s.gif" data-bs-toggle="modal" data-bs-target="#ka88Modal"><a
+                class="ico-audio" id="ka88"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka89s.gif" data-bs-toggle="modal" data-bs-target="#ka89Modal"><a
+                class="ico-audio" id="ka89"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka90s.gif" data-bs-toggle="modal" data-bs-target="#ka90Modal"><a
+                class="ico-audio" id="ka90"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka91s.gif" data-bs-toggle="modal" data-bs-target="#ka91Modal"><a
+                class="ico-audio" id="ka91"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka92s.gif" data-bs-toggle="modal" data-bs-target="#ka92Modal"><a
+                class="ico-audio" id="ka92"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka93s.gif" data-bs-toggle="modal" data-bs-target="#ka93Modal"><a
+                class="ico-audio" id="ka93"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka94s.gif" data-bs-toggle="modal" data-bs-target="#ka94Modal"><a
+                class="ico-audio" id="ka94"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka95s.gif" data-bs-toggle="modal" data-bs-target="#ka95Modal"><a
+                class="ico-audio" id="ka95"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka96s.gif" data-bs-toggle="modal" data-bs-target="#ka96Modal"><a
+                class="ico-audio" id="ka96"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka97s.gif" data-bs-toggle="modal" data-bs-target="#ka97Modal"><a
+                class="ico-audio" id="ka97"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka98s.gif" data-bs-toggle="modal" data-bs-target="#ka98Modal"><a
+                class="ico-audio" id="ka98"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka99s.gif" data-bs-toggle="modal" data-bs-target="#ka99Modal"><a
+                class="ico-audio" id="ka99"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka100s.gif" data-bs-toggle="modal" data-bs-target="#ka100Modal"><a
+                class="ico-audio" id="ka100"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka101s.gif" data-bs-toggle="modal" data-bs-target="#ka101Modal"><a
+                class="ico-audio" id="ka101"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+          <tr>
+            <td><img src="images/katakana/Still/ka102s.gif" data-bs-toggle="modal" data-bs-target="#ka102Modal"><a
+                class="ico-audio" id="ka102"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka103s.gif" data-bs-toggle="modal" data-bs-target="#ka103Modal"><a
+                class="ico-audio" id="ka103"><i class="fa-solid fa-volume-high"></i></a></td>
+            <td><img src="images/katakana/Still/ka104s.gif" data-bs-toggle="modal" data-bs-target="#ka104Modal"><a
+                class="ico-audio" id="ka104"><i class="fa-solid fa-volume-high"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+
+  <section>
+    <div class="modal fade" id="ka01Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka01.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka02Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka02.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka03Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka03.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka04Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka04.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka05Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka05.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka06Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka06.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka07Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka07.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka08Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka08.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka09Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka09.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka10Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka10.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka11Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka11.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka12Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka12.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka13Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka13.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka14Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka14.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka15Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka15.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka16Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka16.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka17Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka17.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka18Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka18.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka19Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka19.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka20Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka20.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka21Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka21.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka22Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka22.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka23Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka23.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka24Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka24.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka25Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka25.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka26Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka26.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka27Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka27.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka28Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka28.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka29Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka29.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka30Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka30.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka31Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka31.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka32Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka32.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka33Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka33.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka34Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka34.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka35Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka35.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka36Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka36.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka37Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka37.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka38Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka38.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka39Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka39.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka40Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka40.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka41Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka41.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka42Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka42.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka43Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka43.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka44Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka44.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka45Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka45.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="ka46Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/katakana/stroke/ka46.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </section>
+
+  <script src="js/chart.js"></script>
+  <script>
+    $(function () {
+      playKatakana();
+    })
+  </script>
+</body>
+<footer>
+  <hr>
+  <p><i class="fa-regular fa-copyright"></i> Ryan Huntley 2023</p>
+</footer>
+
+</html>

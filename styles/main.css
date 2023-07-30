@@ -15,12 +15,22 @@
     ". slides slides slides slides slides ."; 
 }
 
+h1{
+    margin: 0 auto 1em auto;
+}
+
 nav{
     grid-area: nav;
 }
 
 .page-header{
     grid-area: header;
+}
+
+.ico-kana-box{
+    border: 1px solid #f17d32;
+    width: 50px;
+    display: inline-block;
 }
 
 td img {
@@ -72,7 +82,7 @@ td {
 }
 
 #standard td {
-    border: 4px solid darkorange;
+    border: 2px solid #f17d32;
 }
 
 #voiced{
@@ -86,4 +96,9 @@ td {
 #slides tbody{
     width: 60%;
     display: table;
+}
+
+footer{
+    text-align: right;
+    padding: 1em 2em 0 2em;
 }
