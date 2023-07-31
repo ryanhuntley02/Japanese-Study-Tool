@@ -57,7 +57,7 @@ function shuffle(){
 function reOrder(isShuffled){
     if(isShuffled){
         let activeCpy = JSON.parse(JSON.stringify(activeSet));
-        $('.flip-card').each((card)=>{
+        $('.flip-card').each((index, card)=>{
             let rand = getRand(Object.keys(activeCpy).length);
             let key = Object.keys(activeCpy)[rand];
             $('.flip-card-front p', card).html(key);
