@@ -58,10 +58,8 @@ function reOrder(isShuffled){
     if(isShuffled){
         let activeCpy = JSON.parse(JSON.stringify(activeSet));
         $('.flip-card').each((card)=>{
-            console.log(card);
             let rand = getRand(Object.keys(activeCpy).length);
             let key = Object.keys(activeCpy)[rand];
-            console.log(key);
             $('.flip-card-front p', card).html(key);
             $('.flip-card-back p', card).html(activeCpy[key]);
             delete activeCpy[key];
