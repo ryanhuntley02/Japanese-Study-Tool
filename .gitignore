@@ -1,5 +1,4 @@
 util/
-*.json
 server.js
 audio/
 images/
