@@ -224,12 +224,8 @@ let activeSet;
 window.onload = () => {
     let setCodeSearch = new URLSearchParams(window.location.search);
     let setCode = Object.fromEntries(setCodeSearch.entries());
-    fetch('../flashcards.json').then((res)=>{
-        return res.json();
-    }).then((data)=>{
-        activeSet = data[setEnum[setCode.set]]
-        loadSet(activeSet);
-    });
+    activeSet = sets[setEnum[setCode.set]];
+    loadSet(activeSet);
 };
 
 function loadSet(set) {
