@@ -17,7 +17,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer">
   <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
     crossorigin="anonymous"></script>
-    <script src="js/flashcards.js"></script>
+    <!--<script src="js/flashcards.js"></script>-->
 </head>
 
 <header>
@@ -72,8 +72,36 @@
     <div id="flashcards" class="carousel slide" data-bs-theme="dark">
       <div class="carousel-inner">
         <?php
-            $sets = json_decode('flashcards.json');
+            $json = file_get_contents('flashcards.json');
+            $sets = json_decode($json, true);
             $activeSet = $sets[$_GET['set']];
+            $keys = array_keys($activeSet);
+            echo '<div class="carousel-item active">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <p>'.$keys[0].'</p>
+                    </div>
+                    <div class="flip-card-back">
+                      <p>'.$activeSet[$keys[0]].'</p>
+                    </div>
+                  </div>
+                </div>
+              </div>';
+              for($i = 1; $i<count($keys); $i++){
+                echo '<div class="carousel-item">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <p>'.$keys[$i].'</p>
+                    </div>
+                    <div class="flip-card-back">
+                      <p>'.$activeSet[$keys[$i]].'</p>
+                    </div>
+                  </div>
+                </div>
+              </div>';
+              }
         ?>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#flashcards" data-bs-slide="prev">
