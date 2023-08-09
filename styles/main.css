@@ -1,3 +1,6 @@
+.page-wrapper{
+    max-width: 720px;
+}
 
 .chart-block{
     display: grid;
@@ -22,10 +25,10 @@
     gap: 0px 0px; 
     grid-template-areas: 
       "nav nav nav nav nav nav nav"
-      ". header header header header header header"
-      ". cards cards cards cards cards ."
-      ". cards cards cards cards cards ." 
-      ". controls controls controls controls controls .";
+      "header header header header header header header"
+      "cards cards cards cards cards cards cards"
+      "cards cards cards cards cards cards cards" 
+      "controls controls controls controls controls controls controls";
 }
 
 #flashcards{
@@ -34,11 +37,16 @@
 
 .controls{
     grid-area: controls;
-    padding: 0 7% 0 7%
+    width: 80%;
+    margin: auto;
 }
 
 h1{
     margin: 0 auto 1em auto;
+}
+
+h2{
+    margin:1em auto 1.5em auto; 
 }
 
 nav{
@@ -101,6 +109,7 @@ td {
 .carousel-item{
     height: 100%;
 }
+
 .flip-card{
     text-align: center;
     font-size: 50px;
@@ -191,4 +200,27 @@ td {
 footer{
     text-align: right;
     padding: 1em 2em 0 2em;
+}
+
+.st-pair{
+    margin: 10px 0 10px 0;
+    background-color: #d9dde8;
+    border-radius: 5px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.st-term{
+    display: inline-block;
+    width: 33%;
+    padding: 20px
+}
+
+.st-def{
+    display: inline-block;
+    width: 66%;
+    height: 75%;
+    border-left: 1px solid black;
+    padding:  10px 0 10px 40px;
 }
