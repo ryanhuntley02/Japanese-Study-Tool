@@ -17,7 +17,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer">
   <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
     crossorigin="anonymous"></script>
-  <script src="js/flashcards.js"></script>
 </head>
 
 <header>
@@ -69,7 +68,7 @@
     <section class="page-header">
       <h1>Flashcards</h1>
     </section>
-    <div id="flashcards" class="carousel slide" data-bs-theme="dark">
+    <div id="flashcards" class="carousel slide" data-bs-theme="dark" data-bs-wrap="false">
       <div class="carousel-inner">
         <?php
             $json = file_get_contents('flashcards.json');
@@ -121,9 +120,12 @@
       <hr>
     </div>
   </div>
+  <script src="flashcards.js"></script>
 <script>
   $(function (){
+    loadCards();
     shuffle();
+    flipCard();
   })
 </script>
 </body>
