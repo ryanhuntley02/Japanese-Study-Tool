@@ -75,19 +75,19 @@
             $sets = json_decode($json, true);
             $activeSet = $sets[$_GET['set']];
             $keys = array_keys($activeSet);
-            echo '<div class="carousel-item active">
-                <div class="flip-card">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <p>'.$keys[0].'</p>
-                    </div>
-                    <div class="flip-card-back">
-                      <p>'.$activeSet[$keys[0]].'</p>
-                    </div>
-                  </div>
-                </div>
-              </div>';
-              for($i = 1; $i<count($keys); $i++){
+            // echo '<div class="carousel-item active">
+            //     <div class="flip-card">
+            //       <div class="flip-card-inner">
+            //         <div class="flip-card-front">
+            //           <p>'.$keys[0].'</p>
+            //         </div>
+            //         <div class="flip-card-back">
+            //           <p>'.$activeSet[$keys[0]].'</p>
+            //         </div>
+            //       </div>
+            //     </div>
+            //   </div>';
+              for($i = 0; $i<count($keys); $i++){
                 echo '<div class="carousel-item">
                 <div class="flip-card">
                   <div class="flip-card-inner">
@@ -120,12 +120,13 @@
       <hr>
     </div>
   </div>
-  <script src="flashcards.js"></script>
+  <script src="js/flashcards.js"></script>
 <script>
   $(function (){
     loadCards();
     shuffle();
     flipCard();
+    trackStudied();
   })
 </script>
 </body>

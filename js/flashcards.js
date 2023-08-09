@@ -1,7 +1,9 @@
 let qCards;
+let activePreShuffle;
 
 function loadCards(){
     qCards = $('.carousel-item');
+    qCards[0].classList.add('active');
 }
 
 function shuffle() {
@@ -12,37 +14,33 @@ function flipCard(){
     qCards = $('.carousel-item');
 }
 
+function trackStudied(){
+    $('.carousel-control-next').click(()=>{
+        $('.carousel-item.active').addClass('studied');
+    });
+}
+
 function reOrder(isShuffled) {
     //Get active card sets
-    let qCurrent = $('.carousel-item');
-    let qActive = $('.carousel-item.active')[0];
-    let activeIndex = qCurrent.index(qActive);
-    let qActivePre = qCurrent.slice(0, activeIndex);
-    let qActivePost = qCurrent.slice(activeIndex);
-    $('.carousel-item').remove();
+    let qActivePre = $('.carousel-item.studied');
+    let qActivePost = $('.carousel-item').not('.studied');
 
     //Reorder sets
     if (isShuffled) {
-        let qActivePreCpy = qActivePre.clone();
-        for (let i = 0; i < qActivePre.length; i++) {
-            let rand = getRand(qActivePreCpy.length);
-            qActivePre[i] = qActivePreCpy[rand];
-            qActivePreCpy.splice(rand, 1);
-            console.log(qActivePreCpy.length);
-        }
-        let qActivePostCpy = qActivePost.clone();
-        for (let i = 0; i < qActivePost.length; i++) {
-            let rand = getRand(qActivePostCpy.length);
-            qActivePost[i] = qActivePostCpy[rand];
-            qActivePostCpy.splice(rand, 1);
-        }
-        qActivePost.removeClass('active');
+        activePreShuffle = $('.carousel-item.active')[0];
+        $('.carousel-item').removeClass('active');
+        shuffleArray(qActivePre);
+        shuffleArray(qActivePost);
         qActivePost[0].classList.add('active');
     }
     else{
-
+        $('.carousel-item').removeClass('active');
+        qActivePre = qActivePre.sort(compareCards);
+        qActivePost = qActivePost.sort(compareCards);
+        activePreShuffle.classList.add('active');
     }
 
+    $('.carousel-item').remove();
     //Add new ordered set
     qActivePre.each((index, card) => {
         $('.carousel-inner').append(card);
@@ -70,14 +68,14 @@ function getRand(max) {
 }
 
 function compareCards(card1, card2) {
-    if (qCards.index(card1) < qCards.index(card2)) {
-        return -1;
-    }
-    if (qCards.index(card1) > qCards.index(card2)) {
-        return 1;
-    }
-    else {
-        return 0;
-    }
+    return qCards.index(card1) - qCards.index(card2);
 }
 
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
