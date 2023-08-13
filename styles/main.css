@@ -10,12 +10,12 @@
     grid-row-gap: 0px;
     grid-template-areas: 
     "nav nav nav nav nav nav nav"
-    " . header header header header header header "
-    ". standard standard standard standard standard ."
-    ". standard standard standard standard standard ."
-    ". voiced voiced voiced voiced voiced ."
-    ". slides slides slides slides slides ."
-    ". slides slides slides slides slides ."; 
+    " header header header header header header header "
+    "standard standard standard standard standard standard standard"
+    "standard standard standard standard standard standard standard"
+    "voiced voiced voiced voiced voiced voiced voiced"
+    "slides slides slides slides slides slides slides"
+    "slides slides slides slides slides slides slides"; 
 }
 
 .card-block {
@@ -258,6 +258,7 @@ footer{
     height: 60px;
     display: flex;
     align-items: center;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .st-term{
