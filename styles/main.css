@@ -141,7 +141,7 @@ td {
     margin: auto;
 }
 
-.flip-card:hover .flip-card-inner{
+.flip-card-play .flip-card-inner{
     transform: rotateX(180deg);
 }
 

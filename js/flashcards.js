@@ -1,7 +1,17 @@
 let qCards;
 let activePreShuffle;
 
-function loadCards(){
+//Page setup functions
+////////////////////////////////////
+function setup() {
+    loadCards();
+    shuffle();
+    flipCard();
+    trackStudied();
+    flipOnChange();
+}
+
+function loadCards() {
     qCards = $('.carousel-item');
     qCards[0].classList.add('active');
 }
@@ -10,17 +20,32 @@ function shuffle() {
     $('.shuffle').on('click', shuffleOn);
 }
 
-function flipCard(){
+function flipCard() {
     qCards = $('.carousel-item');
+    qCards.find('.flip-card').on('click', function () {
+        $(this).hasClass('flip-card-play') ? $(this).removeClass('flip-card-play') : $(this).addClass('flip-card-play');
+    });
 }
 
-function trackStudied(){
-    $('.carousel-control-next').click(()=>{
+function trackStudied() {
+    $('.carousel-control-next').on('click', () => {
         $('.carousel-item.active').addClass('studied');
     });
 }
 
+function flipOnChange() {
+    $('.carousel-control-next, .carousel-control-prev').on('click', function () {
+        $(this).parent().on('transitionend', function () {
+            $('.flip-card').removeClass('flip-card-play');
+            $(this).off('transitionend', arguments.callee);
+        });
+    });
+}
+////////////////////////////////////
+
 function reOrder(isShuffled) {
+    let activePreUnshuffle;
+
     //Get active card sets
     let qActivePre = $('.carousel-item.studied');
     let qActivePost = $('.carousel-item').not('.studied');
@@ -32,8 +57,11 @@ function reOrder(isShuffled) {
         shuffleArray(qActivePre);
         shuffleArray(qActivePost);
         qActivePost[0].classList.add('active');
+        if ($('.flip-card', activePreShuffle).hasClass('flip-card-play'))
+            $('.flip-card', qActivePost[0]).addClass('flip-card-play');
     }
-    else{
+    else {
+        activePreUnshuffle = $('.carousel-item.active')[0];
         $('.carousel-item').removeClass('active');
         qActivePre = qActivePre.sort(compareCards);
         qActivePost = qActivePost.sort(compareCards);
@@ -41,6 +69,11 @@ function reOrder(isShuffled) {
     }
 
     $('.carousel-item').remove();
+
+    if (activePreUnshuffle)
+        if ($('.flip-card', activePreUnshuffle).hasClass('flip-card-play'))
+            $('.flip-card', activePreUnshuffle).removeClass('flip-card-play');
+
     //Add new ordered set
     qActivePre.each((index, card) => {
         $('.carousel-inner').append(card);
@@ -48,6 +81,7 @@ function reOrder(isShuffled) {
     qActivePost.each((index, card) => {
         $('.carousel-inner').append(card);
     });
+    flipCard();
 
 }
 

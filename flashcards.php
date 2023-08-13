@@ -33,7 +33,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="hiragana_chart.html">Chart</a></li>
-              <li><a class="dropdown-item" href="flashcards.html?set=hi">Flashcards</a></li>
+              <li><a class="dropdown-item" href="flashcards.php?set=hi">Flashcards</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -42,7 +42,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="katakana_chart.html">Chart</a></li>
-              <li><a class="dropdown-item" href="flashcards.html?set=ka">Flashcards</a></li>
+              <li><a class="dropdown-item" href="flashcards.php?set=ka">Flashcards</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -119,10 +119,7 @@
   <script src="js/flashcards.js"></script>
   <script>
     $(function() {
-      loadCards();
-      shuffle();
-      flipCard();
-      trackStudied();
+      setup();
     })
   </script>
 </body>
