@@ -36,9 +36,58 @@
 }
 
 .controls{
+    position: relative;
     grid-area: controls;
+    display: flex;
+    padding: 10px;
     width: 80%;
     margin: auto;
+    border-bottom: 1px solid #bbb;
+}
+
+.control-block{
+    display: flex;
+    margin: auto 0 auto 0;
+}
+
+.carousel-controls{
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+}
+
+.carousel-controls p{
+    margin: auto 7px auto 7px;
+}
+
+.carousel-controls button{
+    padding: 0px;
+    width: min-content;
+    position: static;
+    display: inline-block;
+    background-color: transparent;
+    text-align: center;
+    border-radius: 100%;
+    border: none;
+    color: #bbb;
+    opacity: 100%;
+    margin: 5px
+}
+
+.carousel-controls button:hover{
+    color: #9b9b9b;
+    opacity: 100%;
+}
+
+.carousel-controls button:active{
+    box-shadow: 2px 2px 5px #fc894d;
+    opacity: 100%;
+}
+
+.carousel-controls button:focus{
+    color: #bbb;
+    opacity: 100%;
 }
 
 h1{

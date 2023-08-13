@@ -1,5 +1,6 @@
 let qCards;
 let activePreShuffle;
+let count = 1;
 
 //Page setup functions
 ////////////////////////////////////
@@ -7,8 +8,7 @@ function setup() {
     loadCards();
     shuffle();
     flipCard();
-    trackStudied();
-    flipOnChange();
+    carouselControls();
 }
 
 function loadCards() {
@@ -21,21 +21,43 @@ function shuffle() {
 }
 
 function flipCard() {
-    qCards = $('.carousel-item');
-    qCards.find('.flip-card').on('click', function () {
-        $(this).hasClass('flip-card-play') ? $(this).removeClass('flip-card-play') : $(this).addClass('flip-card-play');
+    qCards.find('.flip-card-inner').on('click', function () {
+        $(this).parent().hasClass('flip-card-play') ? $(this).parent().removeClass('flip-card-play') : $(this).parent().addClass('flip-card-play');
+    });
+    qCards.find('.flip-card-inner').on('transitionend', (e) => {
+        e.stopPropagation();
     });
 }
 
-function trackStudied() {
+function carouselControls() {
+    //Show current card count
+    let counter = $('.carousel-counter');
+    counter.html(count + '/' + qCards.length);
+    $('.carousel-control-next').on('click', function () {
+        $('.carousel').off('transitionend');
+        $('.carousel').on('transitionend', function () {
+            if (count < qCards.length)
+                counter.html(++count + "/" + qCards.length);
+            $(this).off('transitionend', arguments.callee);
+        });
+    });
+    $('.carousel-control-prev').on('click', function () {
+        $('.carousel').off('transitionend');
+        $('.carousel').on('transitionend', function () {
+            if (count > 1)
+                counter.html(--count + "/" + qCards.length);
+            $(this).off('transitionend', arguments.callee);
+        });
+    })
+
+    //Track which cards have been studied already
     $('.carousel-control-next').on('click', () => {
         $('.carousel-item.active').addClass('studied');
     });
-}
 
-function flipOnChange() {
+    //Return to default side after moving to another card
     $('.carousel-control-next, .carousel-control-prev').on('click', function () {
-        $(this).parent().on('transitionend', function () {
+        $(this).parent().parent().parent().find('.carousel').on('transitionend', function () {
             $('.flip-card').removeClass('flip-card-play');
             $(this).off('transitionend', arguments.callee);
         });
@@ -63,17 +85,14 @@ function reOrder(isShuffled) {
     else {
         activePreUnshuffle = $('.carousel-item.active')[0];
         $('.carousel-item').removeClass('active');
+        $('.flip-card').removeClass('flip-card-play');
         qActivePre = qActivePre.sort(compareCards);
         qActivePost = qActivePost.sort(compareCards);
         activePreShuffle.classList.add('active');
+
     }
 
     $('.carousel-item').remove();
-
-    if (activePreUnshuffle)
-        if ($('.flip-card', activePreUnshuffle).hasClass('flip-card-play'))
-            $('.flip-card', activePreUnshuffle).removeClass('flip-card-play');
-
     //Add new ordered set
     qActivePre.each((index, card) => {
         $('.carousel-inner').append(card);

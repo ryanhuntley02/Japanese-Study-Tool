@@ -87,33 +87,37 @@
           }
           ?>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#flashcards" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#flashcards" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
       <div class="controls">
-        <button type="button" class="btn shuffle" data-bs-toggle="button">
-          <i class="fa-solid fa-shuffle"></i>
-          <span class="visually-hidden">Shuffle</span>
-        </button>
-        <hr>
+        <div class="control-block">
+          <button type="button" class="btn shuffle" data-bs-toggle="button">
+            <i class="fa-solid fa-shuffle"></i>
+            <span class="visually-hidden">Shuffle</span>
+          </button>
+        </div>
+        <div class="control-block carousel-controls">
+          <button class="carousel-control-prev" type="button" data-bs-target="#flashcards" data-bs-slide="prev">
+            <i class="fa-solid fa-circle-arrow-left fa-3x"></i>
+            <span class="visually-hidden">Next</span>
+          </button>
+          <p class="carousel-counter"></p>
+          <button class="carousel-control-next" type="button" data-bs-target="#flashcards" data-bs-slide="next">
+            <i class="fa-solid fa-circle-arrow-right fa-3x"></i>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
     </div>
     <div>
-    <?php
-    echo '<h2>Terms in this set (' . count($activeSet) . ') </h2>';
-    for ($i = 0; $i < count($activeSet); $i++) {
-      echo '
+      <?php
+      echo '<h2>Terms in this set (' . count($activeSet) . ') </h2>';
+      for ($i = 0; $i < count($activeSet); $i++) {
+        echo '
           <div class = "st-pair">
             <span class="st-term">' . $keys[$i] . ' </span><span class="st-def">' . $activeSet[$keys[$i]] . '</span>
           </div>';
-    }
-    ?>
+      }
+      ?>
     </div>
   </div>
   <script src="js/flashcards.js"></script>
