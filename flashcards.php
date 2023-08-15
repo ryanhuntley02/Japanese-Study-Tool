@@ -15,55 +15,54 @@
   <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 </head>
 
-<header>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Japanese Study Tool</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Hiragana
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="hiragana_chart.html">Chart</a></li>
-              <li><a class="dropdown-item" href="flashcards.php?set=hi">Flashcards</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Katakana
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="katakana_chart.html">Chart</a></li>
-              <li><a class="dropdown-item" href="flashcards.php?set=ka">Flashcards</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Study Sets</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
-</header>
-
 <body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Japanese Study Tool</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Hiragana
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="hiragana_chart.html">Chart</a></li>
+                <li><a class="dropdown-item" href="flashcards.php?set=hi">Flashcards</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Katakana
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="katakana_chart.html">Chart</a></li>
+                <li><a class="dropdown-item" href="flashcards.php?set=ka">Flashcards</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Study Sets</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
   <div class="contents-block mx-auto page-wrapper">
     <div class="card-block">
-      <section class="page-header">
+      <div class="page-header">
         <h1>Flashcards</h1>
-      </section>
+      </div>
       <div id="flashcards" class="carousel slide" data-bs-theme="dark" data-bs-wrap="false">
         <div class="carousel-inner">
           <?php
@@ -126,10 +125,10 @@
       setup();
     })
   </script>
-</body>
-<footer>
+  <footer>
   <hr>
   <p><i class="fa-regular fa-copyright"></i> Ryan Huntley 2023</p>
 </footer>
+</body>
 
 </html>

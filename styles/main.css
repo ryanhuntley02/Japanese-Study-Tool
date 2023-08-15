@@ -5,11 +5,11 @@
 .chart-block{
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 2fr; 
-    grid-template-rows: .1fr .25fr 1fr 1fr 1fr 1fr 1.1fr;
+    grid-template-rows: 40px .25fr 1fr 1fr 1fr 1fr 1.1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     grid-template-areas: 
-    "nav nav nav nav nav nav nav"
+    ". . . . . . ."
     " header header header header header header header "
     "standard standard standard standard standard standard standard"
     "standard standard standard standard standard standard standard"
@@ -21,14 +21,41 @@
 .card-block {
     display: grid; 
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 2fr; 
-    grid-template-rows: .1fr .25fr 1fr 1fr .25fr; 
+    grid-template-rows: 40px .25fr 1fr 1fr .25fr; 
     gap: 0px 0px; 
     grid-template-areas: 
-      "nav nav nav nav nav nav nav"
+      ". . . . . . ."
       "header header header header header header header"
       "cards cards cards cards cards cards cards"
       "cards cards cards cards cards cards cards" 
       "controls controls controls controls controls controls controls";
+}
+
+.learn-block{
+    display: grid; 
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1.5fr 1.5fr; 
+    grid-template-rows: 40px .25fr 0.1fr 1.8fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". . . . . . ."
+      "header header header header header header header"
+      "round round round round round round round"
+      "interface interface interface interface interface interface interface";
+}
+
+.learn-interface{
+    grid-area: interface;
+    background-color: #bbb;
+}
+
+.round{
+    grid-area: round;
+}
+
+.round h2{
+    text-align: center;
+    margin: 30px;
+    font-size: small;
 }
 
 #flashcards{
@@ -104,6 +131,10 @@ nav{
 
 .page-header{
     grid-area: header;
+}
+
+.page-header h1{
+    margin: 0px;
 }
 
 .ico-kana-box{
