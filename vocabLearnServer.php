@@ -44,13 +44,14 @@ function generate_question($term, $ease, &$questions, $set)
         case $ease < 2:
             $multiChoice['type'] = 'multiple-choice';
             $multiChoice['order'] = 'jp-to-en';
+            $multiChoice['options'] = [];
             for ($i = 0; $i < 4; $i++) {
                 if($i == $multiCorrectDex){
-                    $multiChoice[$i] = $set[$term];
+                    $multiChoice['options'][$i] = $set[$term];
                 }
                 else{
                     $rand = array_keys($cset)[rand(0, count(array_keys($cset)) - 1)];
-                    $multiChoice[$i] = $cset[$rand];
+                    $multiChoice['options'][$i] = $cset[$rand];
                     unset($cset[$rand]);
                 }
             }
@@ -60,13 +61,14 @@ function generate_question($term, $ease, &$questions, $set)
             $cset = array_flip($cset);
             $multiChoice['type'] = 'multiple-choice';
             $multiChoice['order'] = 'en-to-jp';
+            $multiChoice['options'] = [];
             for ($i = 0; $i < 4; $i++) {
                 if($i == $multiCorrectDex){
-                    $multiChoice[$i] = $term;
+                    $multiChoice['options'][$i] = $term;
                 }
                 else{
                     $rand = array_keys($cset)[rand(0, count(array_keys($cset)) - 1)];
-                    $multiChoice[$i] = $cset[$rand];
+                    $multiChoice['options'][$i] = $cset[$rand];
                     unset($cset[$rand]);
                 }
             }
@@ -88,7 +90,9 @@ function generate_question($term, $ease, &$questions, $set)
 function check_answer($setId, $answer, $term)
 {
     $set = retrieve_set($setId);
-    return $set[$term] == $answer;
+    $response['correct'] = $set[$term] == $answer;
+    $response['correctAnswer'] = $set[$term];
+    echo json_encode($response, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE); 
 }
 
 

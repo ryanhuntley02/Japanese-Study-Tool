@@ -1,3 +1,11 @@
+footer{
+    position:absolute;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: min-content;
+}
 .page-wrapper{
     max-width: 720px;
 }
@@ -46,6 +54,41 @@
 .learn-interface{
     grid-area: interface;
     background-color: #bbb;
+    font-family: 'Noto Sans JP', 'sans-serif';
+    padding: 40px 25px 25px 25px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.learn-interface button{
+    border-radius: 10px;
+    display: block;
+}
+
+.learn-interface h3{
+    font-size: large;
+}
+
+.learn-interface p{
+    margin: 20px 0 100px 0;
+    font-size: xx-large;
+}
+
+.multiple-choice{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 75px 75px;
+}
+
+.mc-option{
+    margin: 5px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.option-number{
+    display: inline-block;
+    margin-right: 20px;
 }
 
 .round{
@@ -55,7 +98,7 @@
 .round h2{
     text-align: center;
     margin: 30px;
-    font-size: small;
+    font-size: large;
 }
 
 #flashcards{
@@ -219,6 +262,7 @@ td {
     transition: transform 0.8s;
     transform-style: preserve-3d;
     margin: auto;
+    border-radius: 10px;
 }
 
 .flip-card-play .flip-card-inner{
