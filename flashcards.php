@@ -16,62 +16,63 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Japanese Study Tool</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Hiragana
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="hiragana_chart.html">Chart</a></li>
-                <li><a class="dropdown-item" href="flashcards.php?set=hi">Flashcards</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Katakana
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="katakana_chart.html">Chart</a></li>
-                <li><a class="dropdown-item" href="flashcards.php?set=ka">Flashcards</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Study Sets</a>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+  <div class="page-container">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Japanese Study Tool</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Hiragana
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="hiragana_chart.html">Chart</a></li>
+                  <li><a class="dropdown-item" href="flashcards.php?set=hi">Flashcards</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Katakana
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="katakana_chart.html">Chart</a></li>
+                  <li><a class="dropdown-item" href="flashcards.php?set=ka">Flashcards</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Study Sets</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
-  <div class="contents-block mx-auto page-wrapper">
-    <div class="card-block">
-      <div class="page-header">
-        <h1>Flashcards</h1>
-      </div>
-      <div id="flashcards" class="carousel slide" data-bs-theme="dark" data-bs-wrap="false">
-        <div class="carousel-inner">
-          <?php
-          $json = file_get_contents('flashcards.json');
-          $sets = json_decode($json, true);
-          $activeSet = $sets[$_GET['set']];
-          $keys = array_keys($activeSet);
-          for ($i = 0; $i < count($keys); $i++) {
-            echo '<div class="carousel-item">
+      </nav>
+    </header>
+    <div class="contents-block mx-auto content-wrapper">
+      <div class="card-block">
+        <div class="page-header">
+          <h1>Flashcards</h1>
+        </div>
+        <div id="flashcards" class="carousel slide" data-bs-theme="dark" data-bs-wrap="false">
+          <div class="carousel-inner">
+            <?php
+            $json = file_get_contents('flashcards.json');
+            $sets = json_decode($json, true);
+            $activeSet = $sets[$_GET['set']];
+            $keys = array_keys($activeSet);
+            for ($i = 0; $i < count($keys); $i++) {
+              echo '<div class="carousel-item">
                 <div class="flip-card">
                   <div class="flip-card-inner">
                     <div class="flip-card-front">
@@ -83,52 +84,53 @@
                   </div>
                 </div>
               </div>';
-          }
-          ?>
+            }
+            ?>
+          </div>
+        </div>
+        <div class="controls">
+          <div class="control-block">
+            <button type="button" class="btn shuffle" data-bs-toggle="button">
+              <i class="fa-solid fa-shuffle"></i>
+              <span class="visually-hidden">Shuffle</span>
+            </button>
+          </div>
+          <div class="control-block carousel-controls">
+            <button class="carousel-control-prev" type="button" data-bs-target="#flashcards" data-bs-slide="prev">
+              <i class="fa-solid fa-circle-arrow-left fa-3x"></i>
+              <span class="visually-hidden">Next</span>
+            </button>
+            <p class="carousel-counter"></p>
+            <button class="carousel-control-next" type="button" data-bs-target="#flashcards" data-bs-slide="next">
+              <i class="fa-solid fa-circle-arrow-right fa-3x"></i>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         </div>
       </div>
-      <div class="controls">
-        <div class="control-block">
-          <button type="button" class="btn shuffle" data-bs-toggle="button">
-            <i class="fa-solid fa-shuffle"></i>
-            <span class="visually-hidden">Shuffle</span>
-          </button>
-        </div>
-        <div class="control-block carousel-controls">
-          <button class="carousel-control-prev" type="button" data-bs-target="#flashcards" data-bs-slide="prev">
-            <i class="fa-solid fa-circle-arrow-left fa-3x"></i>
-            <span class="visually-hidden">Next</span>
-          </button>
-          <p class="carousel-counter"></p>
-          <button class="carousel-control-next" type="button" data-bs-target="#flashcards" data-bs-slide="next">
-            <i class="fa-solid fa-circle-arrow-right fa-3x"></i>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div>
-      <?php
-      echo '<h2>Terms in this set (' . count($activeSet) . ') </h2>';
-      for ($i = 0; $i < count($activeSet); $i++) {
-        echo '
+      <div>
+        <?php
+        echo '<h2>Terms in this set (' . count($activeSet) . ') </h2>';
+        for ($i = 0; $i < count($activeSet); $i++) {
+          echo '
           <div class = "st-pair">
             <span class="st-term">' . $keys[$i] . ' </span><span class="st-def">' . $activeSet[$keys[$i]] . '</span>
           </div>';
-      }
-      ?>
+        }
+        ?>
+      </div>
     </div>
+    <script src="js/flashcards.js"></script>
+    <script>
+      $(function() {
+        setup();
+      })
+    </script>
+    <footer>
+      <hr>
+      <p><i class="fa-regular fa-copyright"></i> Ryan Huntley 2023</p>
+    </footer>
   </div>
-  <script src="js/flashcards.js"></script>
-  <script>
-    $(function() {
-      setup();
-    })
-  </script>
-  <footer>
-  <hr>
-  <p><i class="fa-regular fa-copyright"></i> Ryan Huntley 2023</p>
-</footer>
 </body>
 
 </html>

@@ -113,17 +113,19 @@ function displayMidReview() {
     if (Object.keys(checkedAns).length) {
         $('.learn-interface').html('');
         $('.learn-interface').css('background-color', 'transparent');
-        $('.learn-interface').append('<h3>Terms studied in this round:</h3>').hide();
+        $('.learn-interface').append('<h3 style="opacity:0.0;">Terms studied in this round:</h3>');
         for (const [key, value] of Object.entries(checkedAns)) {
-            $('.learn-interface').append('<div class = "st-pair" ><span class="st-term">' + key + ' </span><span class="st-def">' + value + '</span></div> ').hide();
+            $('.learn-interface').append('<div class = "st-pair" style="opacity:0.0;"><span class="st-term">' + key + ' </span><span class="st-def">' + value + '</span></div> ');
         }
-        $('.learn-interface').append(`<button class="btn btn-outline-dark" style="margin: 0 auto">Continue to round ${roundNum}</button>`).hide();
-        $('.learn-interface .btn').on('click', generateRound);
-        $('.learn-interface').first('h3').slideDown(700);
-        $('.learn-interface').first('.st-pair').slideDown(700, function showNext() {
-            $(this).next('.st-pair').slideDown(700, showNext);
+        $('.learn-interface').append(`<button class="btn btn-outline-dark" style="margin: 0 auto;opacity:0.0;">Continue to round ${roundNum}</button>`);
+        $('.learn-interface h3').first().fadeTo(700, 1.0, function(){
+            $('.learn-interface .st-pair').first().fadeTo(700, 1.0, function showNext() {
+                $(this).next().fadeTo(700, 1.0, showNext);
+            });
         });
-        $('.learn-interface').first('.btn').slideDown(700);
+        $('.learn-interface .btn').first().fadeTo(700, 1.0, function(){
+            $('.learn-interface').first('.btn').on('click', generateRound);
+        });
     }
     else
         generateRound();
